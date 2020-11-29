@@ -1,5 +1,6 @@
 package BuscaminasProject;
 
+
 import java.util.Scanner;
 
 public class Joc { //CONTROLADOR
