@@ -653,6 +653,7 @@ public class PartidaTest {
 	public void  testUpdateVistaTaulerWithOutFlag() { 
 		MockPartida p = new MockPartida();
 		int returnUpdate=0;
+
 		//PARTICI� EQUIVALENT DE CASOS SENSE FLAG
 		//TEST CASE CASELLA JA DESTAPADA SENSE FLAG
 		int vistaInicial[][] = {
@@ -666,7 +667,7 @@ public class PartidaTest {
 				{-2,-2,-2,-2,-2,-2,-2,-2},
 				{-2,-2,-2,-2,-2,-2,-2,-2},
 			};
-		p.setMockVistaTauler(vistaInicial );
+		p.setMockVistaTauler(vistaInicial);
 		
 		int expectedTaulerVista[][] = {
 				{-2,-2,-2,-2, 1, 1, 0, 0},
@@ -846,8 +847,8 @@ public class PartidaTest {
 			}
 		}
 		
-		
-		
+
+
 		//TEST CASE MOLTS ZEROS AL VOLTANT SELECCIONANT UNA CASELLA A ZERO
 		int taulerMockAux[][]= {
 				{0, 0, 0, 0, 0, 0, 0, 0},
@@ -925,6 +926,7 @@ public class PartidaTest {
 	public void  testUpdateVistaTaulerWithFlag() { 
 		MockPartida p = new MockPartida();
 		int returnUpdate=0;
+
 		//PARTICI� EQUIVALENT DE CASOS AMB FLAG
 		//TEST CASE CASELLA JA DESTAPADA AMB FLAG
 		int vistaInicial[][] = {

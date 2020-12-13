@@ -31,22 +31,84 @@ public class JocTest {
 		System.setOut(originalOut);
 		
 	}
-	
+
 	@Test
 	public void testjugarPartidaGuanyada() {
-		
+
 		final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 		final PrintStream originalOut = System.out;
 		System.setOut(new PrintStream(outContent));
 		MockJoc joc = new MockJoc();
 		//PARTIDA GUANYADA (al System.out s'acumulen les coses que s'han anat escribint abans, per tant posem el valor del test anterior abans del resultat esperat
 		joc.jugarPartida(".\\src\\test\\resources\\joc_jugarPartida_victoria.txt");
+		//joc.jugarPartida(".\\src\\test\\resources\\joc_jugarPartida_FalsaVictoria");
 		String partidaGuanyada = "ENHORABONA MAQUINA! Has guanyat la partida.\n";
 		assertEquals(partidaGuanyada, outContent.toString());
 		System.setOut(originalOut);
-		
+
 	}
-	
+
+
+	//FER I ALEIX
+	@Test
+	public void Automated1() {
+
+		final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+		final PrintStream originalOut = System.out;
+		System.setOut(new PrintStream(outContent));
+		MockJoc joc = new MockJoc();
+		//PARTIDA PERDUDA
+		joc.jugarPartida(".\\src\\test\\resources\\AutomatedTest1.txt");
+		String partidaPerduda = "Has perdut la partida perque has seleccionat una bomba. \n";
+		assertEquals(partidaPerduda, outContent.toString());
+		System.setOut(originalOut);
+
+	}
+
+	@Test
+	public void Automated2() {
+
+		final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+		final PrintStream originalOut = System.out;
+		System.setOut(new PrintStream(outContent));
+		MockJoc joc = new MockJoc();
+		//PARTIDA GUANYADA (al System.out s'acumulen les coses que s'han anat escribint abans, per tant posem el valor del test anterior abans del resultat esperat
+		joc.jugarPartida(".\\src\\test\\resources\\AutomatedTest2.txt");
+		String partidaGuanyada = "ENHORABONA MAQUINA! Has guanyat la partida.\n";
+		assertEquals(partidaGuanyada, outContent.toString());
+		System.setOut(originalOut);
+
+	}
+
+	@Test
+	public void Automated3() {
+
+		final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+		final PrintStream originalOut = System.out;
+		System.setOut(new PrintStream(outContent));
+		MockJoc joc = new MockJoc();
+		//PARTIDA PERDUDA
+		joc.jugarPartida(".\\src\\test\\resources\\AutomatedTest3.txt");
+		String partidaPerduda = "Has perdut la partida perque has seleccionat una bomba. \n";
+		assertEquals(partidaPerduda, outContent.toString());
+		System.setOut(originalOut);
+
+	}
+
+	@Test
+	public void Automated4() {
+
+		final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+		final PrintStream originalOut = System.out;
+		System.setOut(new PrintStream(outContent));
+		MockJoc joc = new MockJoc();
+		//PARTIDA GUANYADA (al System.out s'acumulen les coses que s'han anat escribint abans, per tant posem el valor del test anterior abans del resultat esperat
+		joc.jugarPartida(".\\src\\test\\resources\\AutomatedTest4.txt");
+		String partidaGuanyada = "ENHORABONA MAQUINA! Has guanyat la partida.\n";
+		assertEquals(partidaGuanyada, outContent.toString());
+		System.setOut(originalOut);
+
+	}
 
 	@Test
 	public void testBucleJoc() {

@@ -210,6 +210,82 @@ public class TaulerTest {
 	@Test
 	public void testGenerateTaulerMock() {
 		MockTauler t = new MockTauler();
+		Vista v = new Vista();
+
+		//------------------- FER I ALEIX ---------------------
+
+		StringBuilder sb = new StringBuilder();
+
+		for(int y = 0; y < t.getHeight(); y++) {
+			char c = 'A';
+			int lletraNumero = (int) c + y;
+			sb.append(Character.toString((char) lletraNumero));
+			sb.append(" |");
+			for(int x = 0; x < t.getWidth(); x++) {
+				sb.append("_" + v.transformaVista(t.getCasella(x, y)) + "_|");
+			}
+			sb.append("\n");
+		}
+		System.out.print(sb.toString());
+/*
+		//------ Escenari 5, TC = 1 --------
+		for (int i=0; i<t.getHeight();i++)
+		{
+			for (int j=0; j<t.getWidth(); j++){
+				System.out.print("X= "+i+", Y= "+j+" -> "+ t.getCasella(j,i)+"\n");
+				assertEquals(t.getCasella(j,i),0);
+			}
+		}
+
+		//------ Escenari 5, TC = 2 --------
+		int cont=0;
+		String value="";
+		for (int i=0; i<t.getHeight();i++)
+		{
+			for (int j=0; j<t.getWidth(); j++){
+				value=v.transformaVista(t.getCasella(j, i));
+				System.out.print("X= "+i+", Y= "+j+" -> "+ value +"\n");
+				if(value == "B")
+					cont++;
+			}
+		}
+		assertEquals(cont,1);
+
+
+		//------ Escenari 5, TC = 3 --------
+		int cont=0;
+		String value="";
+		for (int i=0; i<t.getHeight();i++)
+		{
+			for (int j=0; j<t.getWidth(); j++){
+				value=v.transformaVista(t.getCasella(j, i));
+				System.out.print("X= "+i+", Y= "+j+" -> "+ value +"\n");
+				if(value == "$")
+					cont++;
+			}
+		}
+		assertEquals(cont,1);
+*/
+	//------ Escenari 5, TC = 4 --------
+		int contB=0,contM=0;
+		String value="";
+		for (int i=0; i<t.getHeight();i++)
+		{
+			for (int j=0; j<t.getWidth(); j++){
+				value=v.transformaVista(t.getCasella(j, i));
+				System.out.print("X= "+i+", Y= "+j+" -> "+ value +"\n");
+				if(value == "$")
+					contB++;
+				if (value == "B")
+					contM++;
+			}
+		}
+		assertEquals(contM,4);
+		assertEquals(contB,4);
+
+
+ /*
+ -------------- ALREADY DONE ---------------------
 		//valors frontera
 		assertEquals(t.getCasella(0, 0), 0);
 		assertEquals(t.getCasella(7,8), 0);
@@ -221,6 +297,7 @@ public class TaulerTest {
 		assertEquals(t.getCasella(3, 0), 0);
 		assertEquals(t.getCasella(1, 3), 1);
 		assertEquals(t.getCasella(6, 2), 1);
+		*/
 	}
 
 	
